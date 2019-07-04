@@ -1,0 +1,126 @@
+server:
+  port: 80
+zuul:
+  routes:
+    fauth:
+      path: /auth/**
+      url: http://fauth
+      stripPrefix: false
+    fuser:
+      path: /user/**
+      url: http://fauth
+      stripPrefix: false
+    fsts:
+      path: /contest/sts/getStsToken
+      url: http://fmisc
+      stripPrefix: false
+    fcontest:
+      path: /contest/**
+      url: http://fcontest
+      stripPrefix: false
+    fcomment:
+      path: /comment/**
+      url: http://fcomment
+      stripPrefix: false
+    fh5:
+      path: /h5/**
+      url: http://show-h5
+      stripPrefix: false
+    fsocial:
+      path: /social/**
+      url: http://fsocial
+      stripPrefix: false
+    foss:
+      path: /media/**
+      url: http://fmisc
+      stripPrefix: false
+    fchat:
+      path: /chat/**
+      url: http://fchat
+      stripPrefix: false
+    freport:
+      path: /report/**
+      url: http://fmisc
+      stripPrefix: false
+    fsearch:
+      path: /search/**
+      url: http://fsearch
+      stripPrefix: false
+    fad:
+      path: /advertisement/**
+      url: http://fad
+      stripPrefix: false
+    fconfig:
+      path: /actuator/**
+      url: http://fconfig
+      stripPrefix: false
+    fpay:
+      path: /pay/**
+      url: http://fpay
+      stripPrefix: false
+    bean:
+      path: /bean/**
+      url: http://fpay
+      stripPrefix: false
+    fdiscovery:
+      path: /discovery/**
+      url: http://fmisc
+      stripPrefix: false
+    fthumbup:
+      path: /thumbup/**
+      url: http://fthumbup
+      stripPrefix: false
+    fwords:
+      path: /fwords/**
+      url: http://fwords
+      stripPrefix: false
+    fform:
+      path: /form/**
+      url: http://fmisc
+      stripPrefix: false
+    fmanager:
+      path: /manager/**
+      url: http://fjob-manager
+      stripPrefix: false
+
+spring:
+  redis:
+    database: 2
+    host: r-bp18c4e0cc101014.redis.rds.aliyuncs.com
+    port: 6379
+    timeout: 6000
+    password: XJS#@!2018
+    lettuce:
+      pool:
+        max-active: 20
+        max-idle: 20
+        min-idle: 3
+        max-wait: 6000
+  nebula:
+    redis:
+      database: 6
+      host: 172.16.189.232
+      port: 16379
+      timeout: PT6S
+
+gateway:
+  aesKeyByPaths:
+    - /social,167029fd407a4b56,3977d891a7fd4131,7e6a824ded5f46c8ad4caa86dcc72c09
+    - /chat,a57c63108f244015,771f4f7e65444119,267e4ec4b84d46cbb4beb1c060506017
+    - /bean,c1c768bb5d86416f,152c7c63c08c42c2,d3c6f8d0aa2848ffba0e090b25ad10e0
+    - /contest,9627857c474b4669,628b8f08042b43bb,c201dea3c02a42e1970fa9b1bde83c5b
+    - /user,14122d4997a048cb,7a43750a88f64d5a,40c536bcdb474de6a0f1c2b762da987b
+    - /auth,14122d4997a048cb,7a43750a88f64d5a,40c536bcdb474de6a0f1c2b762da987b
+    - /comment,8c0e4e99e9bd4016,a31b35d8bcd64318,306b0d0edaff452093547ae0dfe6dfaf
+#    - /social,209bf9cdf6f04f7a,efe86dc955ec40ea,a0bf7aeb2e4d45f28c1c6e37bcd8325d
+#    - /chat,9fce5025df084013,f396199c4d00402c,d461742ee9ba437db3a1b5c33c5e5b87
+#    - /bean,6ebb06160c544eb1,caae19ff22e54192,0d7f76e3639240d5a2fc14d3c93cca1d
+#    - /contest,60de9ca765284dde,1a701be0b0154a92,5bdd96618bd845eda8cb37800df7067d
+#    - /user,3f67cfd9f1b84396,f21633ff920e472d,2bf29c82e81a4a1b8a09b709c4b77775
+#    - /auth,3f67cfd9f1b84396,f21633ff920e472d,2bf29c82e81a4a1b8a09b709c4b77775
+#    - /comment,5000c5424ff44643,630d5979c60f4c31,1d05599bf6a647249a2a68e1344d3c4c
+
+nebula:
+  checkRisk:
+    host: http://nebula.chouchoujianshen.com
+    auth: 7a7c4182f1bef7504a1d3d5eaa51a242
