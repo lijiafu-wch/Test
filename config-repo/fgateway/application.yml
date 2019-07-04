@@ -170,5 +170,5 @@ robot:
   url: http://fbackend-robot
   msgsUri: /social/moments/add
   thumbUri: /thumbup/thumb
-  userLoginUri: /auth/appLogin
+  userLoginUri: /auth/appLogin111
   videoSaveUri: /contest/video/saveVideo
