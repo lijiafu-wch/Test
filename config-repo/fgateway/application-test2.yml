@@ -1,0 +1,122 @@
+server:
+  port: 80
+
+zuul:
+  routes:
+    fauth:
+      path: /auth/**
+      url: http://fauth
+      stripPrefix: false
+    fuser:
+      path: /user/**
+      url: http://fauth
+      stripPrefix: false
+    fsts:
+      path: /contest/sts/getStsToken
+      url: http://fmisc
+      stripPrefix: false
+    fcontest:
+      path: /contest/**
+      url: http://fcontest
+      stripPrefix: false
+    fcomment:
+      path: /comment/**
+      url: http://fcomment
+      stripPrefix: false
+    fh5:
+      path: /h5/**
+      url: http://show-h5
+      stripPrefix: false
+    fsocial:
+      path: /social/**
+      url: http://fsocial
+      stripPrefix: false
+    foss:
+      path: /media/**
+      url: http://fmisc
+      stripPrefix: false
+    fchat:
+      path: /chat/**
+      url: http://fchat
+      stripPrefix: false
+    freport:
+      path: /report/**
+      url: http://fmisc
+      stripPrefix: false
+    fsearch:
+      path: /search/**
+      url: http://fsearch
+      stripPrefix: false
+    fad:
+      path: /advertisement/**
+      url: http://fad
+      stripPrefix: false
+    fconfig:
+      path: /actuator/**
+      url: http://fconfig
+      stripPrefix: false
+    fpay:
+      path: /pay/**
+      url: http://fpay
+      stripPrefix: false
+    bean:
+      path: /bean/**
+      url: http://fpay
+      stripPrefix: false
+    fdiscovery:
+      path: /discovery/**
+      url: http://fmisc
+      stripPrefix: false
+    fthumbup:
+      path: /thumbup/**
+      url: http://fthumbup
+      stripPrefix: false
+    fwords:
+      path: /fwords/**
+      url: http://fwords
+      stripPrefix: false
+    fform:
+      path: /form/**
+      url: http://fmisc
+      stripPrefix: false
+
+spring:
+  redis:
+    database: 2
+    host: 192.168.0.229
+    port: 6379
+    timeout: 6000
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: 6
+  nebula:
+    redis:
+      database: 6
+      host: 192.168.0.226
+      port: 16379
+      timeout: PT6S
+
+gateway:
+  aesKeyByPaths:
+  - /social,167029fd407a4b56,3977d891a7fd4131,7e6a824ded5f46c8ad4caa86dcc72c09
+  - /chat,a57c63108f244015,771f4f7e65444119,267e4ec4b84d46cbb4beb1c060506017
+  - /bean,c1c768bb5d86416f,152c7c63c08c42c2,d3c6f8d0aa2848ffba0e090b25ad10e0
+  - /contest,9627857c474b4669,628b8f08042b43bb,c201dea3c02a42e1970fa9b1bde83c5b
+  - /user,14122d4997a048cb,7a43750a88f64d5a,40c536bcdb474de6a0f1c2b762da987b
+  - /auth,14122d4997a048cb,7a43750a88f64d5a,40c536bcdb474de6a0f1c2b762da987b
+  - /comment,8c0e4e99e9bd4016,a31b35d8bcd64318,306b0d0edaff452093547ae0dfe6dfaf
+#    - /social,b6884dad36a24298,6fcbc752f3d6411a,b6d5f1ad8c6f44eca56cedec1d215f81
+#    - /chat,5b41a67d0ff24e0b,6916fb8542714b30,28f72e90304343ec9d1faf031384a427
+#    - /bean,fe65c021e38c4f1d,6fd527876d4849df,33aa57577c2f4f4bbed92c682288f10a
+#    - /contest,3657a41eee7448c4,97466f082ba3416a,193e06418c6642f9bd5554d0b6f85d17
+#    - /user,5e324d2943204aae,25e5551c40824709,29b6df8b79a849d68bd284a945a3f5e5
+#    - /auth,5e324d2943204aae,25e5551c40824709,29b6df8b79a849d68bd284a945a3f5e5
+#    - /comment,9352caf2f72c45ba,26aeb77279814b55,4d2ec31450c24d4ab3b28031e3d337f6
+
+nebula:
+  checkRisk:
+    host: http://192.168.0.226:9001
+    auth: 7a7c4182f1bef7504a1d3d5eaa51a242
