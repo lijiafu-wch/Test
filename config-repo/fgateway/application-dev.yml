@@ -5,7 +5,7 @@ zuul:
   routes:
     fauth:
       path: /auth/**
-      url: http://localhost123:9091
+      url: http://localhost5:9091
       stripPrefix: false
     fuser:
       path: /user/**
