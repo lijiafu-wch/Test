@@ -14,7 +14,7 @@ spring:
       READ_UNKNOWN_ENUM_VALUES_AS_NULL: true
 
 auth:
-  tokenHeaderName: auth-token1
+  tokenHeaderName: auth-token
   uidHeaderName: auth-uid
   nickHeaderName: auth-nick
   headHeaderName: auth-head
